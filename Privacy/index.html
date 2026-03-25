@@ -35,8 +35,8 @@
 </div>
 
 <div class="container">
-    <h1>Privacy Policy</h1>
-    <p style="text-align: center; color: var(--subtext);">Last updated: March 24, 2026</p>
+    <h1 id="title-main">Privacy Policy</h1>
+    <p style="text-align: center; color: var(--subtext);" id="date-label">Last updated: March 24, 2026</p>
 
     <!-- English -->
     <div id="en" class="lang-section active">
@@ -147,17 +147,36 @@
     </div>
 
     <div class="footer">
-        <p><a href="../terms/" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Terms of Service</a></p>
-        &copy; 2026 PDF Imager. Built with respect for your privacy.
+        <p><a href="../terms/" style="color: var(--primary); text-decoration: none; font-weight: 600;" id="footer-link-text">View Terms of Service</a></p>
+        <span id="footer-copyright">&copy; 2026 PDF Imager. Built with respect for your privacy.</span>
     </div>
 </div>
 
 <script>
+    const ui = {
+        en: { title: "Privacy Policy", date: "Last updated: March 24, 2026", link: "View Terms of Service", footer: "Built with respect for your privacy." },
+        fr: { title: "Politique de confidentialité", date: "Dernière mise à jour: 24 mars 2026", link: "Voir les conditions d'utilisation", footer: "Construit dans le respect de votre vie privée." },
+        pt: { title: "Política de Privacidade", date: "Última atualização: 24 de março de 2026", link: "Ver Termos de Serviço", footer: "Construído com respeito pela sua privacidade." },
+        es: { title: "Política de Privacidad", date: "Última actualización: 24 de marzo de 2026", link: "Ver Términos de Servicio", footer: "Construido con respeto por su privacidad." },
+        de: { title: "Datenschutzerklärung", date: "Zuletzt aktualisiert: 24. März 2026", link: "Nutzungsbedingungen anzeigen", footer: "Mit Respekt für Ihre Privatsphäre erstellt." },
+        zh: { title: "隐私政策", date: "最后更新：2026 年 3 月 24 日", link: "查看服务条款", footer: "尊重您的隐私。" },
+        ru: { title: "Политика конфиденциальности", date: "Последнее обновление: 24 марта 2026 г.", link: "Посмотреть условия использования", footer: "Создано с уважением к вашей конфиденциальности." },
+        ja: { title: "プライバシーポリシー", date: "最終更新日: 2026年3月24日", link: "利用規約を表示", footer: "お客様のプライバシーを尊重して構築されています。" },
+        ar: { title: "سياسة الخصوصية", date: "آخر تحديث: ٢٤ مارس ٢٠٢٦", link: "عرض شروط الخدمة", footer: "تم إنشاؤه مع احترام خصوصيتك." }
+    };
+
     function showLang(lang) {
         document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
         document.getElementById(lang).classList.add('active');
         document.getElementById('btn-' + lang).classList.add('active');
+        
+        // Update UI
+        document.getElementById('title-main').innerText = ui[lang].title;
+        document.getElementById('date-label').innerText = ui[lang].date;
+        document.getElementById('footer-link-text').innerText = ui[lang].link;
+        document.getElementById('footer-copyright').innerHTML = "&copy; 2026 PDF Imager. " + ui[lang].footer;
+        
         window.scrollTo(0, 0);
     }
 </script>
