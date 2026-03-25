@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Center - PDF Imager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #4F46E5; --primary-light: #EEF2FF; --text: #1E293B; --subtext: #64748B; --bg: #F8FAFC; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { max-width: 600px; width: 100%; padding: 40px 24px; text-align: center; }
+        .logo { width: 80px; height: 80px; background: var(--primary-light); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: var(--primary); font-size: 32px; font-weight: 800; }
+        h1 { font-size: 32px; font-weight: 800; color: #0F172A; margin-bottom: 12px; letter-spacing: -1px; }
+        p.subtitle { font-size: 16px; color: var(--subtext); margin-bottom: 48px; line-height: 1.5; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .card { 
+            background: #fff; border: 2px solid #F1F5F9; border-radius: 20px; padding: 32px 24px; text-decoration: none; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: block;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1); }
+        .card h3 { font-size: 18px; font-weight: 800; color: #1E293B; margin: 0 0 8px; }
+        .card p { font-size: 14px; color: var(--subtext); margin: 0; }
+        
+        .footer { margin-top: 64px; font-size: 13px; color: #CBD5E1; }
+        
+        @media (max-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">P</div>
+    <h1>PDF Imager Legal Center</h1>
+    <p class="subtitle">Official legal documentation and privacy guidelines for the PDF Imager application.</p>
+
+    <div class="grid">
+        <a href="./Privacy/" class="card">
+            <h3>Privacy Policy</h3>
+            <p>How we protect your data</p>
+        </a>
+        <a href="./Terms/" class="card">
+            <h3>Terms of Service</h3>
+            <p>Usage rules & conditions</p>
+        </a>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 PDF Imager. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>
